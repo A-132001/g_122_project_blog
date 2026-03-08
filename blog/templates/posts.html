@@ -1,7 +1,8 @@
 {% for post in posts %}
 
-<h1>Post Title: {{post.title}}</h1>
-<h2>Post description: {{post.content}}</h2>
-<p>created at {{post.created_at}}</p>
-
+    <h1>Post Title: {{post.title}}</h1>
+    <h2>Post description: {{post.content}}</h2>
+    <p>created at {{post.created_at}}</p>
+    <a href="{% url 'post_details' post.id %}">Go to post Details for this post</a>
+    
 {% endfor %}

@@ -4,7 +4,7 @@ git commit -m "changes message"
 git push
 
 # clone or get a copy from the project use this command (one time)
-git clone git clone https://github.com/A-132001/g_122_project_blog.git .
+git clone https://github.com/A-132001/g_122_project_blog.git .
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt

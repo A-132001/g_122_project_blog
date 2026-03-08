@@ -10,3 +10,25 @@
 10- python manage.py migrate
 11- pip freeze > requirements.txt
 12- python manage.py createsuperuser
+
+
+# handle media in django project
+
+1 - add this in settings.py file
+MEDIA_URL = '/media/'
+MDEIA_ROOT = BASE_DIR / 'media'
+
+2- add this in main urls.py file
+from django.conf.urls.static import static
+from django.conf import settings
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+3- install pillow libarary
+pip install pillow
+
+4- add your image field in your model
+image = models.ImageField(upload_to="posts_images",null=True,blank=True)
+
+5- use this image in your template 
+<img src="{{post.image.url}}" />

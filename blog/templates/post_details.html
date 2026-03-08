@@ -1,3 +1,6 @@
 <h1>Post Title: {{post.title}}</h1>
 <h2>Post description: {{post.content}}</h2>
 <p>created at {{post.created_at}}</p>
+<img src="{{post.image.url}}" />
+
+<a href="{% url 'all_posts' %}">Go to all posts</a>

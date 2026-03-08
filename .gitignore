@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg
+*.egg-info/
+.Python
+build/
+dist/
+venv/
+env/
+.venv/
+.env/
+pip-wheel-metadata/
+share/python-wheels/
+
+# Django-specific
+*.log
+*.pot
+local_settings.py
+media/  # Typically user-uploaded files, handled by deployment storage
+staticfiles/ # Collected static files, usually generated during deployment
+
+# Databases
+db.sqlite3
+*.sqlite3-journal
+
+# IDEs and OS
+.idea/  # PyCharm/IntelliJ
+.vscode/ # VS Code
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Temporary files
+*.swp
+*~
+
+# Virtualenv (explicitly ignore common locations)
+/venv
+/env
+/.venv
+/.env
