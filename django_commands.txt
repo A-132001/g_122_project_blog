@@ -30,5 +30,9 @@ pip install pillow
 4- add your image field in your model
 image = models.ImageField(upload_to="posts_images",null=True,blank=True)
 
-5- use this image in your template 
+5- run this commands
+python manage.py makemigrations
+python manage.py migrate
+
+6- use this image in your template 
 <img src="{{post.image.url}}" />

@@ -1,8 +1,172 @@
-{% for post in posts %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Posts</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="all_posts.html" class="logo">BlogSite</a>
+        <div class="nav-links">
+          <a href="all_posts.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Login</a>
+          <a href="#" class="btn">Sign Up</a>
+        </div>
+        <button class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
 
-    <h1>Post Title: {{post.title}}</h1>
-    <h2>Post description: {{post.content}}</h2>
-    <p>created at {{post.created_at}}</p>
-    <a href="{% url 'post_details' post.id %}">Go to post Details for this post</a>
-    
-{% endfor %}
+    <!-- Main Content -->
+    <main class="container">
+      <div class="header">
+        <h1>Latest Posts</h1>
+        <p>Discover our most recent articles and stories</p>
+      </div>
+
+      <div class="posts-grid">
+        <!-- Post 1 -->
+        <article class="post-card">
+          <!-- <div class="post-image">
+                    <img src="images/post1.jpg" alt="Post Image">
+                </div> -->
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="author">John Doe</span>
+              <span class="date">May 15, 2023</span>
+            </div>
+            <h2>
+              <a href="post_details.html"
+                >Getting Started with Web Development</a
+              >
+            </h2>
+            <p class="excerpt">
+              Learn the fundamentals of HTML, CSS, and JavaScript to start your
+              web development journey.
+            </p>
+            <a href="post_details.html" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="post-card">
+          <!-- <div class="post-image">
+                    <img src="images/post2.jpg" alt="Post Image">
+                </div> -->
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="author">Jane Smith</span>
+              <span class="date">April 28, 2023</span>
+            </div>
+            <h2><a href="post_details.html">CSS Grid Layout Tutorial</a></h2>
+            <p class="excerpt">
+              Master the modern CSS Grid system to create complex layouts with
+              ease.
+            </p>
+            <a href="post_details.html" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="post-card">
+          <!-- <div class="post-image">
+                    <img src="images/post3.jpg" alt="Post Image">
+                </div> -->
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="author">Mike Johnson</span>
+              <span class="date">April 10, 2023</span>
+            </div>
+            <h2>
+              <a href="post_details.html">Responsive Design Principles</a>
+            </h2>
+            <p class="excerpt">
+              Learn how to make your websites look great on all devices.
+            </p>
+            <a href="post_details.html" class="read-more">Read More</a>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="post-card">
+          <!-- <div class="post-image">
+                    <img src="images/post4.jpg" alt="Post Image">
+                </div> -->
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="author">Sarah Williams</span>
+              <span class="date">March 22, 2023</span>
+            </div>
+            <h2><a href="post_details.html">JavaScript ES6 Features</a></h2>
+            <p class="excerpt">
+              Explore the powerful new features introduced in ECMAScript 6.
+            </p>
+            <a href="post_details.html" class="read-more">Read More</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="pagination">
+        <a href="#" class="page-link active">1</a>
+        <a href="#" class="page-link">2</a>
+        <a href="#" class="page-link">3</a>
+        <a href="#" class="page-link next">Next &raquo;</a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <p>
+              BlogSite is a platform for sharing ideas and stories with the
+              world.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="all_posts.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 BlogSite. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .querySelector(".hamburger")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>

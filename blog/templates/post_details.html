@@ -1,6 +1,255 @@
-<h1>Post Title: {{post.title}}</h1>
-<h2>Post description: {{post.content}}</h2>
-<p>created at {{post.created_at}}</p>
-<img src="{{post.image.url}}" />
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Details | BlogSite</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="all_posts.html" class="logo">BlogSite</a>
+        <div class="nav-links">
+          <a href="all_posts.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Login</a>
+          <a href="#" class="btn">Sign Up</a>
+        </div>
+        <button class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
 
-<a href="{% url 'all_posts' %}">Go to all posts</a>
+    <!-- Main Content -->
+    <main class="container">
+      <article class="single-post">
+        <div class="post-header">
+          <h1>Getting Started with Web Development</h1>
+          <div class="post-meta">
+            <span class="author">{{post.author}}</span>
+            <span class="date">Posted on May 15, 2023</span>
+            <span class="updated">Last updated: May 18, 2023</span>
+          </div>
+        </div>
+
+        <div class="post-image">
+          <img src="images/post1.jpg" alt="Post Image" />
+        </div>
+
+        <div class="post-content">
+          <p>
+            Web development is the work involved in developing a website for the
+            Internet or an intranet. Web development can range from developing a
+            simple single static page of plain text to complex web applications,
+            electronic businesses, and social network services.
+          </p>
+
+          <h2>HTML Basics</h2>
+          <p>
+            HTML (HyperText Markup Language) is the most basic building block of
+            the Web. It defines the meaning and structure of web content.
+          </p>
+
+          <p>A basic HTML document looks like this:</p>
+
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My First Heading&lt;/h1&gt;
+    &lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <h2>CSS Styling</h2>
+          <p>
+            CSS (Cascading Style Sheets) is used to style and layout web pages —
+            for example, to alter the font, color, size, and spacing of your
+            content, split it into multiple columns, or add animations and other
+            decorative features.
+          </p>
+
+          <p>Here's a simple CSS example:</p>
+
+          <pre><code>body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}</code></pre>
+
+          <h2>JavaScript Interactivity</h2>
+          <p>
+            JavaScript is a scripting language that enables you to create
+            dynamically updating content, control multimedia, animate images,
+            and pretty much everything else.
+          </p>
+
+          <p>A simple JavaScript example:</p>
+
+          <pre><code>document.querySelector('button').addEventListener('click', function() {
+    alert('Button clicked!');
+});</code></pre>
+
+          <p>
+            By combining these three technologies, you can create modern,
+            interactive websites that engage users and provide great
+            experiences.
+          </p>
+        </div>
+
+        <div class="post-tags">
+          <span class="tag">Web Development</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+
+        <div class="post-actions">
+          <button class="action-btn like">
+            <i class="far fa-thumbs-up"></i> Like
+          </button>
+          <button class="action-btn share">
+            <i class="fas fa-share"></i> Share
+          </button>
+        </div>
+      </article>
+
+      <section class="comments-section">
+        <h3>Comments (2)</h3>
+
+        <div class="comment-form">
+          <h4>Leave a Comment</h4>
+          <form>
+            <div class="form-group">
+              <textarea placeholder="Your comment..." rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn">Post Comment</button>
+          </form>
+        </div>
+
+        <div class="comments-list">
+          <div class="comment">
+            <div class="comment-author">
+              <img src="images/user1.jpg" alt="User" class="avatar" />
+              <span>Sarah Williams</span>
+            </div>
+            <div class="comment-content">
+              <p>
+                Great article! Very helpful for beginners like me who are just
+                starting with web development.
+              </p>
+              <div class="comment-meta">
+                <span class="date">May 16, 2023</span>
+                <a href="#" class="reply">Reply</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="comment">
+            <div class="comment-author">
+              <img src="images/user2.jpg" alt="User" class="avatar" />
+              <span>Robert Chen</span>
+            </div>
+            <div class="comment-content">
+              <p>
+                Nice overview. Would you recommend any specific resources for
+                learning JavaScript in depth?
+              </p>
+              <div class="comment-meta">
+                <span class="date">May 17, 2023</span>
+                <a href="#" class="reply">Reply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-posts">
+        <h3>Related Posts</h3>
+        <div class="related-grid">
+          <div class="related-post">
+            <a href="#">
+              <img src="images/post2.jpg" alt="Related Post" />
+              <h4>CSS Grid Layout Tutorial</h4>
+            </a>
+          </div>
+          <div class="related-post">
+            <a href="#">
+              <img src="images/post3.jpg" alt="Related Post" />
+              <h4>Responsive Design Principles</h4>
+            </a>
+          </div>
+          <div class="related-post">
+            <a href="#">
+              <img src="images/post4.jpg" alt="Related Post" />
+              <h4>JavaScript ES6 Features</h4>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <p>
+              BlogSite is a platform for sharing ideas and stories with the
+              world.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="all_posts.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 BlogSite. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Simple mobile menu toggle
+      document
+        .querySelector(".hamburger")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>
