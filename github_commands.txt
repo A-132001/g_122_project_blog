@@ -1,0 +1,7 @@
+# to upload you work on your github use this commands 
+git add .
+git commit -m "changes message"
+git push
+
+# to download the latest changes in the project use this command
+git pull  ||  git fetch

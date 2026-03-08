@@ -1,0 +1,7 @@
+{% for post in posts %}
+
+<h1>Post Title: {{post.title}}</h1>
+<h2>Post description: {{post.content}}</h2>
+<p>created at {{post.created_at}}</p>
+
+{% endfor %}

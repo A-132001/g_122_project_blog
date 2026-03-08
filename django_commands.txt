@@ -1,0 +1,12 @@
+1- python -m venv env     
+2- env\Scripts\activate # linux ---> venv\bin\activate
+3- pip list
+4- pip install django
+5- django-admin startproject project
+6- cd project
+7- django-admin startapp blog    ||    python manage.py starapp blog
+8- python manage.py runserver
+9- python manage.py makemigrations
+10- python manage.py migrate
+11- pip freeze > requirements.txt
+12- python manage.py createsuperuser
