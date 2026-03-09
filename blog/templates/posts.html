@@ -38,84 +38,26 @@
 
       <div class="posts-grid">
         <!-- Post 1 -->
+        {% for post in posts %}
         <article class="post-card">
-          <!-- <div class="post-image">
-                    <img src="images/post1.jpg" alt="Post Image">
-                </div> -->
+          <div class="post-image">
+            <img src="{{post.image.url}}" alt="Post Image" />
+          </div>
           <div class="post-content">
             <div class="post-meta">
-              <span class="author">John Doe</span>
-              <span class="date">May 15, 2023</span>
+              <span class="author">{{post.author}}</span>
+              <span class="date">{{post.created_at}}</span>
             </div>
             <h2>
-              <a href="post_details.html"
-                >Getting Started with Web Development</a
-              >
+              <a href="{% url 'post_details' post.id %}">{{post.title}}</a>
             </h2>
-            <p class="excerpt">
-              Learn the fundamentals of HTML, CSS, and JavaScript to start your
-              web development journey.
-            </p>
-            <a href="post_details.html" class="read-more">Read More</a>
+            <p class="excerpt">{{post.content}}</p>
+            <a href="{% url 'post_details' post.id %}" class="read-more"
+              >Read More</a
+            >
           </div>
         </article>
-
-        <!-- Post 2 -->
-        <article class="post-card">
-          <!-- <div class="post-image">
-                    <img src="images/post2.jpg" alt="Post Image">
-                </div> -->
-          <div class="post-content">
-            <div class="post-meta">
-              <span class="author">Jane Smith</span>
-              <span class="date">April 28, 2023</span>
-            </div>
-            <h2><a href="post_details.html">CSS Grid Layout Tutorial</a></h2>
-            <p class="excerpt">
-              Master the modern CSS Grid system to create complex layouts with
-              ease.
-            </p>
-            <a href="post_details.html" class="read-more">Read More</a>
-          </div>
-        </article>
-
-        <!-- Post 3 -->
-        <article class="post-card">
-          <!-- <div class="post-image">
-                    <img src="images/post3.jpg" alt="Post Image">
-                </div> -->
-          <div class="post-content">
-            <div class="post-meta">
-              <span class="author">Mike Johnson</span>
-              <span class="date">April 10, 2023</span>
-            </div>
-            <h2>
-              <a href="post_details.html">Responsive Design Principles</a>
-            </h2>
-            <p class="excerpt">
-              Learn how to make your websites look great on all devices.
-            </p>
-            <a href="post_details.html" class="read-more">Read More</a>
-          </div>
-        </article>
-
-        <!-- Post 4 -->
-        <article class="post-card">
-          <!-- <div class="post-image">
-                    <img src="images/post4.jpg" alt="Post Image">
-                </div> -->
-          <div class="post-content">
-            <div class="post-meta">
-              <span class="author">Sarah Williams</span>
-              <span class="date">March 22, 2023</span>
-            </div>
-            <h2><a href="post_details.html">JavaScript ES6 Features</a></h2>
-            <p class="excerpt">
-              Explore the powerful new features introduced in ECMAScript 6.
-            </p>
-            <a href="post_details.html" class="read-more">Read More</a>
-          </div>
-        </article>
+        {% endfor %}
       </div>
 
       <div class="pagination">

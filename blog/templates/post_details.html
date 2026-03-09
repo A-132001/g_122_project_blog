@@ -33,103 +33,20 @@
     <main class="container">
       <article class="single-post">
         <div class="post-header">
-          <h1>Getting Started with Web Development</h1>
+          <h1>{{post.title}}</h1>
           <div class="post-meta">
             <span class="author">{{post.author}}</span>
-            <span class="date">Posted on May 15, 2023</span>
-            <span class="updated">Last updated: May 18, 2023</span>
+            <span class="date">Posted on {{post.created_at}}</span>
+            <span class="updated">Last updated: {{post.updated_at}}</span>
           </div>
         </div>
 
         <div class="post-image">
-          <img src="images/post1.jpg" alt="Post Image" />
+          <img src="{{post.image.url}}" alt="Post Image" />
         </div>
 
         <div class="post-content">
-          <p>
-            Web development is the work involved in developing a website for the
-            Internet or an intranet. Web development can range from developing a
-            simple single static page of plain text to complex web applications,
-            electronic businesses, and social network services.
-          </p>
-
-          <h2>HTML Basics</h2>
-          <p>
-            HTML (HyperText Markup Language) is the most basic building block of
-            the Web. It defines the meaning and structure of web content.
-          </p>
-
-          <p>A basic HTML document looks like this:</p>
-
-          <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Page Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;My First Heading&lt;/h1&gt;
-    &lt;p&gt;My first paragraph.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-
-          <h2>CSS Styling</h2>
-          <p>
-            CSS (Cascading Style Sheets) is used to style and layout web pages —
-            for example, to alter the font, color, size, and spacing of your
-            content, split it into multiple columns, or add animations and other
-            decorative features.
-          </p>
-
-          <p>Here's a simple CSS example:</p>
-
-          <pre><code>body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-}</code></pre>
-
-          <h2>JavaScript Interactivity</h2>
-          <p>
-            JavaScript is a scripting language that enables you to create
-            dynamically updating content, control multimedia, animate images,
-            and pretty much everything else.
-          </p>
-
-          <p>A simple JavaScript example:</p>
-
-          <pre><code>document.querySelector('button').addEventListener('click', function() {
-    alert('Button clicked!');
-});</code></pre>
-
-          <p>
-            By combining these three technologies, you can create modern,
-            interactive websites that engage users and provide great
-            experiences.
-          </p>
-        </div>
-
-        <div class="post-tags">
-          <span class="tag">Web Development</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-        </div>
-
-        <div class="post-actions">
-          <button class="action-btn like">
-            <i class="far fa-thumbs-up"></i> Like
-          </button>
-          <button class="action-btn share">
-            <i class="fas fa-share"></i> Share
-          </button>
+          <p>{{post.content}}</p>
         </div>
       </article>
 

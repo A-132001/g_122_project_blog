@@ -1,5 +1,7 @@
 # Python
 __pycache__/
+__pycache__
+blog/__pycache__/
 *.pyc
 *.pyd
 *.pyo
