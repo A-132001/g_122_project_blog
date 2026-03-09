@@ -17,7 +17,7 @@
       <div class="container">
         <a href="all_posts.html" class="logo">BlogSite</a>
         <div class="nav-links">
-          <a href="all_posts.html">Home</a>
+          <a href="{% url 'all_posts' %}">Home</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
           <a href="#">Login</a>
@@ -29,44 +29,7 @@
       </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="container">
-      <div class="header">
-        <h1>Latest Posts</h1>
-        <p>Discover our most recent articles and stories</p>
-      </div>
-
-      <div class="posts-grid">
-        <!-- Post 1 -->
-        {% for post in posts %}
-        <article class="post-card">
-          <div class="post-image">
-            <img src="{{post.image.url}}" alt="Post Image" />
-          </div>
-          <div class="post-content">
-            <div class="post-meta">
-              <span class="author">{{post.author}}</span>
-              <span class="date">{{post.created_at}}</span>
-            </div>
-            <h2>
-              <a href="{% url 'post_details' post.id %}">{{post.title}}</a>
-            </h2>
-            <p class="excerpt">{{post.content}}</p>
-            <a href="{% url 'post_details' post.id %}" class="read-more"
-              >Read More</a
-            >
-          </div>
-        </article>
-        {% endfor %}
-      </div>
-
-      <div class="pagination">
-        <a href="#" class="page-link active">1</a>
-        <a href="#" class="page-link">2</a>
-        <a href="#" class="page-link">3</a>
-        <a href="#" class="page-link next">Next &raquo;</a>
-      </div>
-    </main>
+    {% block content %} {% endblock %}
 
     <!-- Footer -->
     <footer class="footer">

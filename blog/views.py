@@ -3,8 +3,8 @@ from .models import Post
 
 def posts(req):
     posts = Post.objects.all()
-    return render(req,'posts.html',{'posts':posts})
+    return render(req,'blog/posts.html',{'posts':posts})
 
 def post_details(req,pk):
     post = Post.objects.get(id=pk)
-    return render(req,'post_details.html',{'post':post})
+    return render(req,'blog/post_details.html',{'post':post})
