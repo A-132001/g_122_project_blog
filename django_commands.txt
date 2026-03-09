@@ -36,3 +36,12 @@ python manage.py migrate
 
 6- use this image in your template 
 <img src="{{post.image.url}}" />
+
+
+
+
+
+//
+create class for comments 
+add comments from admin panel 
+show comments in post_details page

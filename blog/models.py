@@ -12,3 +12,12 @@ class Post(models.Model):
     image = models.ImageField(upload_to="posts_images",null=True,blank=True)
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
+    author = models.CharField(max_length=100,null=True,blank=True)
+    content = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now())
+    
+    def __str__(self):
+        return f'Comment by {self.author} on post {self.post.title}'

@@ -1,45 +1,73 @@
 # Python
 __pycache__/
-__pycache__
-blog/__pycache__/
-*.pyc
-*.pyd
-*.pyo
-*.egg
-*.egg-info/
-.Python
-build/
-dist/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# Virtual environments
 venv/
 env/
+ENV/
 .venv/
-.env/
-pip-wheel-metadata/
-share/python-wheels/
 
-# Django-specific
-*.log
+# Django stuff
+media/
+staticfiles/
 *.pot
-local_settings.py
-media/  # Typically user-uploaded files, handled by deployment storage
-staticfiles/ # Collected static files, usually generated during deployment
 
-# Databases
-db.sqlite3
-*.sqlite3-journal
+# Migrations (optional – many teams keep them)
+**/migrations/*
+!**/migrations/__init__.py
 
-# IDEs and OS
-.idea/  # PyCharm/IntelliJ
-.vscode/ # VS Code
-.DS_Store # macOS
-Thumbs.db # Windows
+# IDEs
+.vscode/
+.idea/
 
-# Temporary files
-*.swp
-*~
+# OS files
+.DS_Store
+Thumbs.db
 
-# Virtualenv (explicitly ignore common locations)
-/venv
-/env
-/.venv
-/.env
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+
+# Node (if you use frontend tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+dist/
+build/
+
+# PostgreSQL dumps
+*.sql
+
+# Coverage reports
+coverage.xml
+
+# Celery
+celerybeat-schedule
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+logs/
+*.log

@@ -7,4 +7,5 @@ def posts(req):
 
 def post_details(req,pk):
     post = Post.objects.get(id=pk)
-    return render(req,'blog/post_details.html',{'post':post})
+    comments = post.comments.all()
+    return render(req,'blog/post_details.html',{'post':post,"comments":comments})

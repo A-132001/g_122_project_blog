@@ -35,39 +35,21 @@
     </div>
 
     <div class="comments-list">
-      <div class="comment">
-        <div class="comment-author">
-          <img src="images/user1.jpg" alt="User" class="avatar" />
-          <span>Sarah Williams</span>
-        </div>
-        <div class="comment-content">
-          <p>
-            Great article! Very helpful for beginners like me who are just
-            starting with web development.
-          </p>
-          <div class="comment-meta">
-            <span class="date">May 16, 2023</span>
-            <a href="#" class="reply">Reply</a>
-          </div>
-        </div>
-      </div>
+      {% for comment in comments %}
 
       <div class="comment">
         <div class="comment-author">
-          <img src="images/user2.jpg" alt="User" class="avatar" />
-          <span>Robert Chen</span>
+          <span>{{comment.author}}</span>
         </div>
         <div class="comment-content">
-          <p>
-            Nice overview. Would you recommend any specific resources for
-            learning JavaScript in depth?
-          </p>
+          <p>{{comment.content}}</p>
           <div class="comment-meta">
-            <span class="date">May 17, 2023</span>
+            <span class="date">{{comment.created_at}}</span>
             <a href="#" class="reply">Reply</a>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
   </section>
 
