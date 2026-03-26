@@ -32,3 +32,8 @@ def create_post(req):
     else:  
         form = PostForm()
     return render(req,'blog/create_post.html',{"form":form})
+
+def delete_post(req,pk):
+    post = Post.objects.get(id=pk)
+    post.delete()
+    return redirect("all_posts")

@@ -26,6 +26,9 @@
         <a href="{% url 'post_details' post.id %}" class="read-more"
           >Read More</a
         >
+        <a href="{% url 'delete_post' post.id %}" class="read-more"
+          >Delete This Post</a
+        >
       </div>
     </article>
     {% endfor %}
