@@ -17,6 +17,7 @@
       <div class="container">
         <a href="all_posts.html" class="logo">BlogSite</a>
         <div class="nav-links">
+          <a href="{% url 'create_post' %}">Create New Post</a>
           <a href="{% url 'all_posts' %}">Home</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
@@ -45,6 +46,7 @@
           <div class="footer-section">
             <h3>Quick Links</h3>
             <ul>
+              <li><a href="{% url 'create_post' %}">Create New Post</a></li>
               <li><a href="all_posts.html">Home</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>

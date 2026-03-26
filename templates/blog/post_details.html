@@ -26,10 +26,9 @@
 
     <div class="comment-form">
       <h4>Leave a Comment</h4>
-      <form>
-        <div class="form-group">
-          <textarea placeholder="Your comment..." rows="4"></textarea>
-        </div>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">{{form}}</div>
         <button type="submit" class="btn">Post Comment</button>
       </form>
     </div>
