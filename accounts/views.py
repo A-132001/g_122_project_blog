@@ -13,3 +13,8 @@ def login_view(req):
         form = AuthenticationForm()
     
     return render(req,'accounts/login.html',{"form":form})
+
+
+def logout_view(req):
+    logout(req)
+    return redirect("all_posts")
