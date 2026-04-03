@@ -26,8 +26,8 @@
           <a href="{% url 'update_user_url' %}">{{user.username}}</a>
           {% else %}
           <a href="{% url 'login_url' %}">Login </a>
-          {% endif %}
           <a href="{% url 'register_url' %}" class="btn">Sign Up</a>
+          {% endif %}
         </div>
         <button class="hamburger">
           <i class="fas fa-bars"></i>

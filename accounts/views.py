@@ -44,3 +44,5 @@ def update_user_view(req):
         profile_form = UpdateProfileForm(instance=req.user.profile)
     
     return render(req,"accounts/update_user.html",{"user_form":user_form,"profile_form":profile_form})
+
+
