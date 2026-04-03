@@ -51,3 +51,8 @@ def post_list(request):
         posts = Post.objects.all()
         serializer = PostSerializer(posts,many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
+    elif request.method == "POST":
+        serializer = PostSerializer(data= request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_201_CREATED)

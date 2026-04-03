@@ -11,11 +11,11 @@
         <span class="updated">Last updated: {{post.updated_at}}</span>
       </div>
     </div>
-
+    {% if post.image %}
     <div class="post-image">
       <img src="{{post.image.url}}" alt="Post Image" />
     </div>
-
+    {% endif %}
     <div class="post-content">
       <p>{{post.content}}</p>
     </div>
