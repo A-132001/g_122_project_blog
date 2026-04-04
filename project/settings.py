@@ -52,6 +52,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5
+}
+
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
@@ -81,6 +86,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'blogDB',
+#         'USER': 'postgres',
+#         'PASSWORD': '1324',
+#         'HOST': 'localhost',  
+#         'PORT': '5432',       
+#     }
+# }
 
 
 # Password validation

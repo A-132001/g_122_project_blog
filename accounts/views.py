@@ -46,3 +46,12 @@ def update_user_view(req):
     return render(req,"accounts/update_user.html",{"user_form":user_form,"profile_form":profile_form})
 
 
+#api part
+from rest_framework import viewsets,permissions
+from .serializers import ProfileSerializer
+from .models import Profile
+
+class ProfileViewset(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    permission_classes = [permissions.AllowAny]
